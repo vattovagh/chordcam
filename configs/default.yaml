@@ -1,0 +1,24 @@
+# Classes the classifier predicts ("none" = hands off the neck / between chords)
+classes: [C, D, Em, F, G, none]
+
+paths:
+  data: data
+  raw_video: data/raw_video
+  frames: data/frames
+  crops: data/crops
+  flagged: data/flagged
+  models: models
+
+capture:
+  width: 1280
+  height: 720
+
+preprocess:
+  image_size: 229        # classifier input, square
+
+smoothing:
+  ema_alpha: 0.3         # weight of the newest frame's probabilities
+  entropy_threshold: 0.6 # normalized entropy above this -> "uncertain"
+
+detector:
+  every_n_frames: 5      # run the fretboard detector this often, reuse the box between

@@ -1,0 +1,6 @@
+# Milestone 1. Versions get pinned once things work (see SPEC.md).
+opencv-python
+numpy
+pyyaml
+yt-dlp
+pytest
